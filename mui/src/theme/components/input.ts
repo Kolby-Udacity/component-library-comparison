@@ -26,7 +26,7 @@ export const MuiInputBase: {
         borderRadius: '4px',
         boxShadow: '5px 5px 10px 0 rgba(46, 61, 73, .05)',
         padding: '0 20px',
-        height: '48px',
+        height: '46px',
         color: '#6d7780',
         fontSize: '.875rem',
         '&:focus': {
@@ -55,6 +55,9 @@ export const MuiInputBase: {
         fieldset: {
           border: `solid 1px ${palette.divider} !important`,
         },
+      },
+      'select[aria-invalid="true"]': {
+        border: '1px solid #d32f2f !important',
       },
     },
   },
