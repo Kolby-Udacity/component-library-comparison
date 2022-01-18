@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 
-import { Button, Paper, Rating, Stack, Typography } from '@mui/material'
+import { Button, Paper, Rating, Stack, Tooltip, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 
 import { Course, courses } from './data'
@@ -22,9 +22,11 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => {
   return (
     <Paper sx={{ display: 'flex', boxShadow: 3 }} style={{ height: 340 }}>
       <Stack spacing={1} sx={{ padding: 2 }}>
-        <Box sx={{ borderRadius: 2, overflow: 'hidden', width: 150, height: 140 }}>
-          <Image src={course.payload.imageUrl} width={150} height={140} alt='' />
-        </Box>
+        <Tooltip title={course.payload.imageUrl}>
+          <Box sx={{ borderRadius: 2, overflow: 'hidden', width: 150, height: 140 }}>
+            <Image src={course.payload.imageUrl} width={150} height={140} alt='' />
+          </Box>
+        </Tooltip>
         <Button size='small'>Program Details</Button>
         <Button variant='outlined' size='small'>
           Download Syllabus

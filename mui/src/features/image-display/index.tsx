@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 
-import { ImageList, ImageListItem } from '@mui/material'
+import { ImageList, ImageListItem, Tooltip } from '@mui/material'
 
 const images = [
   'https://d20vrrgs8k4bvw.cloudfront.net/images/courses/thumbnails/ud894_thumbnail.jpg',
@@ -23,11 +23,13 @@ export const ImageDisplay: FC = () => {
     <ImageList sx={{ width: '100%' }} cols={4} gap={2}>
       {images.map((image) => {
         return (
-          <ImageListItem key={image}>
-            <div>
-              <Image src={image} layout='responsive' width={200} height={200} alt='' priority />
-            </div>
-          </ImageListItem>
+          <Tooltip title={image} key={image}>
+            <ImageListItem>
+              <div>
+                <Image src={image} layout='responsive' width={200} height={200} alt='' priority />
+              </div>
+            </ImageListItem>
+          </Tooltip>
         )
       })}
     </ImageList>

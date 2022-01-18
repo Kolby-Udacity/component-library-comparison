@@ -1,13 +1,14 @@
-import { FC, useState } from 'react'
+import { FC, FormEvent, useState } from 'react'
 
 import { DateTimePicker, LocalizationProvider } from '@mui/lab'
 import DateAdapter from '@mui/lab/AdapterDateFns'
-import { Button, FormControlUnstyled, InputLabel, NativeSelect, Stack, TextField } from '@mui/material'
+import { Button, FormControlUnstyled, InputLabel, NativeSelect, Stack, Switch, TextField } from '@mui/material'
 
 export const ContactForm: FC = () => {
   const [value, setValue] = useState<null | string>(null)
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (event: FormEvent) => {
+    event.preventDefault()
     alert('yo')
   }
 
@@ -35,19 +36,15 @@ export const ContactForm: FC = () => {
         </FormControlUnstyled>
         <LocalizationProvider dateAdapter={DateAdapter}>
           <DateTimePicker
-            disableFuture
-            hideTabs
             showTodayButton
+            disablePast
             todayText='now'
             value={value}
             onChange={(newValue: any) => {
               setValue(newValue)
             }}
-            minDate={new Date('2018-01-01')}
             leftArrowButtonText='Open previous month'
             rightArrowButtonText='Open next month'
-            minTime={new Date(0, 0, 0, 9)}
-            maxTime={new Date(0, 0, 0, 20)}
             renderInput={(params) => (
               <FormControlUnstyled>
                 <InputLabel id='demo-simple-select-label'>Date &amp; Time</InputLabel>
@@ -56,6 +53,12 @@ export const ContactForm: FC = () => {
             )}
           />
         </LocalizationProvider>
+
+        <FormControlUnstyled style={{ display: 'flex', alignItems: 'center' }}>
+          <Switch id='us' defaultChecked />
+          <InputLabel htmlFor='us'>Are you located in the United States?</InputLabel>
+        </FormControlUnstyled>
+
         <Button type='submit'>Submit</Button>
       </Stack>
     </Stack>
