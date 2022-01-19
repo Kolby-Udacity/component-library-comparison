@@ -5,6 +5,8 @@ import { palette } from './palette'
 import { shadows } from './shadows'
 import { typography } from './typography'
 
-const theme = createTheme({ typography, palette, shadows, components })
+const defaultTheme = { typography, palette, shadows, components }
+
+const theme = createTheme(defaultTheme)
 
 export default theme
