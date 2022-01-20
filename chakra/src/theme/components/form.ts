@@ -1,3 +1,5 @@
+import type { SystemStyleObject } from '@chakra-ui/theme-tools'
+
 const inputBaseStyles = {
   borderRadius: '4px',
   height: '48px',
@@ -5,7 +7,7 @@ const inputBaseStyles = {
   fontSize: 'sm',
 }
 
-export const Input = {
+export const Input: SystemStyleObject = {
   baseStyle: {
     field: {},
   },
@@ -19,7 +21,7 @@ export const Input = {
   },
 }
 
-export const Select = {
+export const Select: SystemStyleObject = {
   sizes: {
     md: {
       field: inputBaseStyles,
@@ -27,7 +29,7 @@ export const Select = {
   },
 }
 
-export const FormLabel = {
+export const FormLabel: SystemStyleObject = {
   baseStyle: {
     fontSize: 'sm',
     fontWeight: 'normal',

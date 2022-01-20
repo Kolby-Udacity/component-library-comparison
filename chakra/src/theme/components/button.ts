@@ -1,4 +1,6 @@
-export const Button = {
+import type { SystemStyleObject } from '@chakra-ui/theme-tools'
+
+export const Button: SystemStyleObject = {
   baseStyle: {
     padding: 2,
     borderRadius: 'base',
