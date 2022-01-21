@@ -1,7 +1,18 @@
 import { ComponentsOverrides, ComponentsProps, ComponentsVariants } from '@mui/material'
 
 import { palette } from '../palette'
+import { shadows } from '../shadows'
 
+const inputBaseStyles = {
+  borderRadius: '4px',
+  padding: '0 20px',
+  height: '48px',
+  fontSize: '.875rem',
+  '&:focus': {
+    borderRadius: '4px',
+    backgroundColor: 'white',
+  },
+}
 export const MuiInputBase: {
   defaultProps?: ComponentsProps['MuiInputBase']
   styleOverrides?: ComponentsOverrides['MuiInputBase']
@@ -10,40 +21,16 @@ export const MuiInputBase: {
   styleOverrides: {
     root: {
       paddingRight: '0 !important',
-      input: {
-        borderRadius: '4px',
-        padding: '0 20px',
-        height: '48px',
-        color: '#6d7780',
-        fontSize: '.875rem',
-        '&:focus': {
-          borderRadius: '4px',
-          backgroundColor: 'white',
-        },
-      },
+      input: inputBaseStyles,
       select: {
+        ...inputBaseStyles,
         border: `solid 1px ${palette.divider}`,
-        borderRadius: '4px',
-        boxShadow: '5px 5px 10px 0 rgba(46, 61, 73, .05)',
-        padding: '0 20px',
+        boxShadow: shadows[4],
         height: '46px',
-        color: '#6d7780',
-        fontSize: '.875rem',
-        '&:focus': {
-          borderRadius: '4px',
-          backgroundColor: 'white',
-        },
       },
       fieldset: {
         border: `solid 1px ${palette.divider}`,
-        boxShadow: '5px 5px 10px 0 rgba(46, 61, 73, .05)',
-      },
-      '.MuiInputAdornment-root': {
-        height: '48px',
-        maxHeight: '48px',
-        width: '48px',
-        backgroundColor: 'white',
-        margin: 0,
+        boxShadow: shadows[4],
       },
       '.MuiIconButton-root': {
         marginRight: 0,
@@ -57,7 +44,7 @@ export const MuiInputBase: {
         },
       },
       'select[aria-invalid="true"]': {
-        border: '1px solid #d32f2f !important',
+        border: '1px solid #d32f2f',
       },
     },
   },

@@ -6,7 +6,7 @@ export const Button: SystemStyleObject = {
     borderRadius: 'base',
   },
   sizes: {
-    small: {
+    sm: {
       fontSize: '11px',
       lineHeight: '1rem',
     },

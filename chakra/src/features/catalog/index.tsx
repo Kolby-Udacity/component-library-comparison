@@ -27,10 +27,8 @@ const CourseCard: FC<{ course: Course }> = ({ course }) => {
             <Image src={course.payload.imageUrl} width={150} height={140} alt='' />
           </Box>
         </Tooltip>
-        <Button size='small' test='yo'>
-          Program Details
-        </Button>
-        <Button variant='outline' size='small'>
+        <Button size='sm'>Program Details</Button>
+        <Button variant='outline' size='sm'>
           Download Syllabus
         </Button>
       </Stack>

@@ -5,7 +5,7 @@ export const shadows = [
   '0 0 4px 0 rgba(17, 22, 26, 0.16), 0 2px 4px 0 rgba(17, 22, 26, 0.08), 0 4px 8px 0 rgba(17, 22, 26, 0.08)',
   '0 4px 8px 0 rgb(17 22 26 / 16%), 0 4px 8px 0 rgb(17 22 26 / 8%), 0 8px 16px 0 rgb(17 22 26 / 4%)',
   '0px 5px 25px 0px rgba(21, 34, 58, 0.13)',
-  'none',
+  '5px 5px 10px 0 rgba(46, 61, 73, .05)',
   'none',
   'none',
   'none',
